@@ -37,7 +37,8 @@ ROOT_URLCONF = "saleor.urls"
 WSGI_APPLICATION = "saleor.wsgi.application"
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('ujala', 'ujala07dec@gmail'),
+    ('Amol Khiste', 'amolkhiste@zoho.com')
 )
 MANAGERS = ADMINS
 
@@ -55,12 +56,12 @@ CACHES = {"default": django_cache_url.config()}
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgres://saleor:saleor@localhost:5432/saleor", conn_max_age=600
+        default= "postgres://ujala:password@localhost:5432/ujala", conn_max_age=600
     )
 }
 
 
-TIME_ZONE = "America/Chicago"
+TIME_ZONE = "Asia/Kolkata"
 LANGUAGE_CODE = "en"
 LANGUAGES = [
     ("ar", _("Arabic")),
@@ -200,7 +201,9 @@ TEMPLATES = [
 ]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get( 'DJANGO_SECRET_KEY',
+    # safe value used for development when DJANGO_SECRET_KEY might not be set
+    '9e4@&tw46$l31)zrqe3wi+-slqm(ruvz&se0^%9#6(_w3ui!c0')
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -371,8 +374,8 @@ AUTH_PASSWORD_VALIDATORS = [
     }
 ]
 
-DEFAULT_COUNTRY = os.environ.get("DEFAULT_COUNTRY", "US")
-DEFAULT_CURRENCY = os.environ.get("DEFAULT_CURRENCY", "USD")
+DEFAULT_COUNTRY = os.environ.get("DEFAULT_COUNTRY", "IN")
+DEFAULT_CURRENCY = os.environ.get("DEFAULT_CURRENCY", "INR")
 DEFAULT_DECIMAL_PLACES = get_currency_fraction(DEFAULT_CURRENCY)
 DEFAULT_MAX_DIGITS = 12
 DEFAULT_CURRENCY_CODE_LENGTH = 3
