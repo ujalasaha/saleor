@@ -100,7 +100,8 @@ class CustomerForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email", "note", "is_active"]
+        fields = ["first_name", "last_name", "email", "reg_no", "note",
+            "is_active"]
         labels = {
             "first_name": pgettext_lazy(
                 "Customer form: Given name field", "Given name"

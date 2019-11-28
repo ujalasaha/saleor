@@ -91,10 +91,13 @@ class SignupForm(forms.ModelForm, FormWithReCaptcha):
             )
         },
     )
+    # reg_no = forms.CharField(
+    #     widget=forms.Char
+    # )
 
     class Meta:
         model = User
-        fields = ("email",)
+        fields = ("email", "reg_no")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
