@@ -152,10 +152,6 @@ STATICFILES_DIRS = [
     ("assets", os.path.join(PROJECT_ROOT, "saleor", "static", "assets")),
     ("favicons", os.path.join(PROJECT_ROOT, "saleor", "static", "favicons")),
     ("images", os.path.join(PROJECT_ROOT, "saleor", "static", "images")),
-    (
-        "dashboard/images",
-        os.path.join(PROJECT_ROOT, "saleor", "static", "dashboard", "images"),
-    ),
 ]
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -250,7 +246,6 @@ INSTALLED_APPS = [
     "saleor.graphql",
     "saleor.menu",
     "saleor.order",
-    "saleor.dashboard",
     "saleor.seo",
     "saleor.shipping",
     "saleor.search",
